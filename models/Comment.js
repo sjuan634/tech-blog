@@ -15,4 +15,12 @@ Comment.init(
       type: DataTypes.TEXT,
     },
   },
+  {
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'post',
+  },
 );
+
+module.exports = Comment;
