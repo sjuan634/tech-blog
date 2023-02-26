@@ -13,13 +13,14 @@ Comment.init(
     },
     comment: {
       type: DataTypes.TEXT,
+      allowNull: false,
     },
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'post',
+    modelName: 'comment',
   },
 );
 
