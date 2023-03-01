@@ -1,0 +1,36 @@
+<div>
+  <section>
+    <div>
+      <h2 id="{{post.id}}">{{post.title}}</h2>
+      <span>By: {{post.user.name}} on {{format_date post.createdAt}}</span>
+    </div>
+    <p>{{post.body}}</p>
+  </section>
+  {{#if post.comments}}
+  <section>
+    <div>
+      <h3>Comments</h3>
+    </div>
+    {{#each post.comments as |comment|}}
+    <div>
+      <p>{{comment.comment}}</p>
+      <span>{{comment.user.name}} on {{format_date comment.createdAt}}</span>
+    </div>
+    {{/each}}
+  </section>
+  {{/if}}
+  {{#if logged_in}}
+  <section>
+    <div>
+      <h3>Add Comment</h3>
+    </div>
+    <form id="comment-form">
+      <div>
+        <label for="new-comment-input">New Comment</label>
+        <textarea name="new-comment-input" id="new-comment-input" cols="30" rows="10"></textarea>
+      </div>
+      <button type="submit" id="comment-btn">Submit</button>
+    </form>
+  </section>
+  {{/if}}
+</div>
