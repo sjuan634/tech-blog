@@ -9,6 +9,16 @@
 </head>
 <body>
   <nav>
+    <h1>Tech Blog</h1>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/dashboard">Dashboard</a></li>
+      {{#if logged_in}}
+      <li><a href="#">Logout</a></li>
+      {{else}}
+      <li><a href="/login">Login/Sign Up</a></li>
+      {{/if}}
+    </ul>
   </nav>
   <main>
     {{{ body }}}
