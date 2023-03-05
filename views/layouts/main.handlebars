@@ -14,7 +14,7 @@
       <li><a href="/">Home</a></li>
       <li><a href="/dashboard">Dashboard</a></li>
       {{#if logged_in}}
-      <li><a href="#">Logout</a></li>
+      <li><a id="logout" href="#">Logout</a></li>
       {{else}}
       <li><a href="/login">Login/Sign Up</a></li>
       {{/if}}
@@ -26,3 +26,7 @@
   <footer>Created by @<a href="https://github.com/sjuan634" target="_blank">Juan Sanchez</a></footer>
 </body>
 </html>
+
+{{#if logged_in}}
+<script src="./js/logout.js"></script>
+{{/if}}
