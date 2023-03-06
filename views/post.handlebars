@@ -1,35 +1,35 @@
-<div>
-  <section>
+<div class="container mx-auto py-6">
+  <section class="mb-6">
     <div>
-      <h2 id="{{post.id}}">{{post.title}}</h2>
-      <span>By: {{post.user.name}} on {{format_date post.createdAt}}</span>
+      <h2 id="{{post.id}}" class="text-3xl font-bold mb-2">{{post.title}}</h2>
+      <span class="text-gray-500 text-sm">By: {{post.user.name}} on {{format_date post.createdAt}}</span>
     </div>
-    <p>{{post.body}}</p>
+    <p class="mt-4 text-gray-700">{{post.body}}</p>
   </section>
   {{#if post.comments}}
-  <section>
+  <section class="mb-6">
     <div>
-      <h3>Comments</h3>
+      <h3 class="text-xl font-bold mb-2">Comments</h3>
     </div>
     {{#each post.comments as |comment|}}
-    <div>
-      <p>{{comment.comment}}</p>
-      <span>{{comment.user.name}} on {{format_date comment.createdAt}}</span>
+    <div class="border border-gray-300 rounded p-4 mb-4">
+      <p class="text-gray-700">{{comment.comment}}</p>
+      <span class="text-gray-500 text-sm">By: {{comment.user.name}} on {{format_date comment.createdAt}}</span>
     </div>
     {{/each}}
   </section>
   {{/if}}
   {{#if logged_in}}
   <section>
-    <div>
-      <h3>Add Comment</h3>
-    </div>
-    <form id="comment-form">
-      <div>
-        <label for="new-comment-input">New Comment</label>
-        <textarea name="new-comment-input" id="new-comment-input" placeholder="Add comment here..." required></textarea>
+    <form id="comment-form" class="mt-4">
+      <div class="mb-4">
+        <label for="new-comment-input" class="block text-gray-700 font-bold mb-2">New Comment</label>
+        <textarea name="new-comment-input" id="new-comment-input" placeholder="Add comment here..."
+          class="resize-none border rounded py-2 px-3 w-full focus:outline-none focus:shadow-outline"
+          required></textarea>
       </div>
-      <button type="submit" id="comment-btn">Submit</button>
+      <button type="submit" id="comment-btn"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
     </form>
   </section>
   {{/if}}

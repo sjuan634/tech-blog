@@ -1,28 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
   <title>Tech Blog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <nav>
-    <h1>Tech Blog</h1>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/dashboard">Dashboard</a></li>
-      {{#if logged_in}}
-      <li><a id="logout" href="#">Logout</a></li>
-      {{else}}
-      <li><a href="/login">Login/Sign Up</a></li>
-      {{/if}}
-    </ul>
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+  <nav class="flex items-center justify-between flex-wrap bg-gray-800 p-6">
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+      <span class="font-semibold text-xl tracking-tight">Tech Blog</span>
+    </div>
+    <div class="block lg:hidden">
+      <button
+        class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-white hover:border-white">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 0h20v20H0V0z" />
+        </svg>
+      </button>
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+      <div class="text-sm lg:flex-grow">
+        <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">
+          Home
+        </a>
+        <a href="/dashboard" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">
+          Dashboard
+        </a>
+      </div>
+      <div>
+        {{#if logged_in}}
+        <a id="logout" href="#"
+          class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-800 hover:bg-white mt-4 lg:mt-0">Logout</a>
+        {{else}}
+        <a href="/login"
+          class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-800 hover:bg-white mt-4 lg:mt-0">Login/Sign
+          Up</a>
+        {{/if}}
+      </div>
+    </div>
   </nav>
-  <main>
+  <main class="container mx-auto mt-10">
     {{{ body }}}
   </main>
-  <footer>Created by @<a href="https://github.com/sjuan634" target="_blank">Juan Sanchez</a></footer>
+  <footer class="bg-gray-800 p-4">
+    <div class="text-center text-gray-500 text-sm">
+      Created by @<a href="https://github.com/sjuan634" target="_blank" class="text-gray-400 hover:text-gray-200">Juan
+        Sanchez</a>
+    </div>
+  </footer>
 </body>
+
 </html>
