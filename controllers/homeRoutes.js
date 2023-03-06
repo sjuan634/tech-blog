@@ -44,6 +44,12 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
+router.get('/new-post', withAuth, (req, res) => {
+  res.render('new-post', {
+    logged_in: req.session.logged_in,
+  });
+});
+
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
