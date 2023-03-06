@@ -1,31 +1,19 @@
-{{!-- <div>
-  <div>
-    {{#each user.posts as |post|}}
-    <div>
-      <h2 id="{{post.id}}">{{post.title}}</h2>
-      <span>{{format_date post.createdAt}}</span>
-    </div>
-    {{/each}}
-  </div>
-  <a href="/new-post">
-    <button type="button" id="new-post-btn">Add</button>
-  </a>
-</div>
-
-<script src="../js/logout.js"></script> --}}
 <div class="container mx-auto py-6">
   <div class="grid grid-cols-1 gap-4">
     {{#each user.posts as |post|}}
     <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-      <h2 id="{{post.id}}" class="text-2xl font-bold mb-2">{{post.title}}</h2>
+      <h2 data-post-id="{{post.id}}" class="text-2xl font-bold mb-2 text-blue-600 hover:text-blue-800">
+        <a href="/edit/{{post.id}}">{{post.title}}</a>
+      </h2>
       <span class="text-gray-500 text-sm">{{format_date post.createdAt}}</span>
     </div>
     {{/each}}
   </div>
-  <a href="/new-post">
-    <button type="button" id="new-post-btn"
-      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Add</button>
-  </a>
+  <div class="flex justify-center">
+    <button type="button" id="new-post-btn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+      <a href="/new-post">Add New Post</a>
+    </button>
+  </div>
 </div>
 
 <script src="../js/logout.js"></script>

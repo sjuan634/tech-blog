@@ -2,9 +2,7 @@
   {{#each posts}}
   <article class="mb-6">
     <div>
-      <a href="/post/{{id}}" class="text-xl font-bold text-blue-600 hover:text-blue-800">
-        <h2 id="{{id}}">{{title}}</h2>
-      </a>
+        <h2 id="{{id}}"><a href="/post/{{id}}" class="text-xl font-bold text-blue-600 hover:text-blue-800">{{title}}</a></h2>
       <span class="text-gray-500 text-sm">By: {{user.name}} on {{format_date createdAt}}</span>
     </div>
     <p class="mt-2 text-gray-700">{{body}}</p>
