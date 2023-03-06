@@ -1,7 +1,7 @@
 <div class="container mx-auto py-6">
   <section class="mb-6">
     <div>
-      <h2 id="{{post.id}}" class="text-3xl font-bold mb-2">{{post.title}}</h2>
+      <h2 id="post-title" data-post-id="{{post.id}}" class="text-3xl font-bold mb-2">{{post.title}}</h2>
       <span class="text-gray-500 text-sm">By: {{post.user.name}} on {{format_date post.createdAt}}</span>
     </div>
     <p class="mt-4 text-gray-700">{{post.body}}</p>
@@ -34,6 +34,10 @@
   </section>
   {{/if}}
 </div>
+
+{{#if logged_in}}
+<script src="../js/comment.js"></script>
+{{/if}}
 
 {{#if logged_in}}
 <script src="../js/logout.js"></script>
