@@ -27,10 +27,14 @@
     <form id="comment-form">
       <div>
         <label for="new-comment-input">New Comment</label>
-        <textarea name="new-comment-input" id="new-comment-input" cols="30" rows="10"></textarea>
+        <textarea name="new-comment-input" id="new-comment-input" placeholder="Add comment here..." required></textarea>
       </div>
       <button type="submit" id="comment-btn">Submit</button>
     </form>
   </section>
   {{/if}}
 </div>
+
+{{#if logged_in}}
+<script src="../js/logout.js"></script>
+{{/if}}
