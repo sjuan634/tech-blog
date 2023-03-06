@@ -19,6 +19,8 @@
         alert('Failed to sign up.');
       }
     }
+
+    document.location.replace('/dashboard');
   };
   
   document
