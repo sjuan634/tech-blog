@@ -50,6 +50,25 @@ router.get('/new-post', withAuth, (req, res) => {
   });
 });
 
+router.get('/edit/:id', withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id);
+
+    if (postData) {
+      const post = postData.get({ plain: true });
+
+      res.render('edit-delete', {
+        post,
+      });
+    } else {
+      res.status(404).end();
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
